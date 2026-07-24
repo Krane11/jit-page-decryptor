@@ -779,7 +779,7 @@ namespace ki {
         auto* er = (PEXCEPTION_RECORD)exc_rec;
         auto* ctx = (PCONTEXT)ctx_rec;
 
-        if (t_in_handler) goto fwd;
+        if (t_in_handler) { t_in_handler = 0; return; }
         t_in_handler = 1;
 
         uintptr_t addr = 0;
@@ -896,10 +896,6 @@ namespace ki {
                 syscall<NTSTATUS>("NtContinue", ctx, FALSE);
             }
         }
-
-    fwd:
-        t_in_handler = 0;
-        syscall<NTSTATUS>("NtContinue", ctx, FALSE);
     }
 
 
