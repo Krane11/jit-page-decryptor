@@ -1,5 +1,5 @@
 # jit-page-decryptor
-** x64 header‑only anti‑tamper, anti-dump, and anti-debug library that keeps a PE section and pages encrypted in memory and on disk until it executes and automatically re encrypts it as soon as its done**
+**x64 header‑only anti‑tamper, anti-dump, and anti-debug library that keeps a PE section and pages encrypted in memory and on disk until the page executes and automatically re encrypts the page as soon as its done**
 
 **obviously not paste ready, at least replace the xor**
 
